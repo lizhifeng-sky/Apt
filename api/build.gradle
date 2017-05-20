@@ -1,11 +1,10 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.android.library'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "lzf.apt"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -24,10 +23,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile project(':annotation')
-    compile project(':api')
-    apt project(':apttest')
 }
